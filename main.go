@@ -12,9 +12,8 @@ func main() {
 	app.Name = Name
 	app.Version = Version
 	app.Author = "yagi2"
-	app.Email = ""
+	app.Email = "mail@yagi2.com"
 	app.Usage = ""
-
 	app.Flags = GlobalFlags
 	app.Commands = Commands
 	app.CommandNotFound = CommandNotFound

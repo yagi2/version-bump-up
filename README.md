@@ -1,8 +1,6 @@
-# version-bump-up
-
-
-
+# Android Version Bump Tool[WIP]
 ## Description
+Management Android VERSION_NAME and VERSION_CODE of build.gradle.
 
 ## Usage
 

@@ -1,8 +1,20 @@
 package command
 
-import "github.com/codegangsta/cli"
+import (
+	"fmt"
+	"strings"
+
+	"github.com/codegangsta/cli"
+	"github.com/yagi2/version-bump-up/util"
+)
 
 func CmdMinor(c *cli.Context) {
-	// Write your code here
+	gradle := util.OpenBuildGradle()
 
+	// debug
+	for _, element := range gradle {
+		if strings.Contains(element, "versionName ") || strings.Contains(element, "versionCode ") {
+			fmt.Println(element)
+		}
+	}
 }

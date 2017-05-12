@@ -13,19 +13,19 @@ var GlobalFlags = []cli.Flag{}
 var Commands = []cli.Command{
 	{
 		Name:   "major",
-		Usage:  "Bump up major version e.g. 1.2.2 to 2.0.0",
+		Usage:  "[WIP]Bump up major version e.g. 1.2.2 to 2.0.0",
 		Action: command.CmdMajor,
 		Flags:  []cli.Flag{},
 	},
 	{
 		Name:   "minor",
-		Usage:  "Bump up minor version e.g. 1.2.2 to 1.3.0",
+		Usage:  "[WIP]Bump up minor version e.g. 1.2.2 to 1.3.0",
 		Action: command.CmdMinor,
 		Flags:  []cli.Flag{},
 	},
 	{
 		Name:   "patch",
-		Usage:  "Bump up patch version e.g. 1.2.2 to 1.2.3",
+		Usage:  "[WIP]Bump up patch version e.g. 1.2.2 to 1.2.3",
 		Action: command.CmdPatch,
 		Flags:  []cli.Flag{},
 	},
@@ -37,7 +37,7 @@ var Commands = []cli.Command{
 	},
 	{
 		Name:   "check",
-		Usage:  "Check now version.",
+		Usage:  "[WIP]Check now version.",
 		Action: command.CmdCheck,
 		Flags:  []cli.Flag{},
 	},

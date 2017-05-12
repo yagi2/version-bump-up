@@ -37,7 +37,7 @@ var Commands = []cli.Command{
 	},
 	{
 		Name:   "check",
-		Usage:  "[WIP]Check now version.",
+		Usage:  "Check now version.",
 		Action: command.CmdCheck,
 		Flags:  []cli.Flag{},
 	},

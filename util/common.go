@@ -38,7 +38,6 @@ func WriteBuildGradle(newGradle []string) {
 	defer file.Close()
 	for _, element := range newGradle {
 		file.Write(([]byte)(element))
-		file.Write(([]byte)("\n"))
 	}
 
 	fmt.Println("Complete write to app/build.gradle")

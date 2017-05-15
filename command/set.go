@@ -26,14 +26,15 @@ func CmdSet(c *cli.Context) {
 	newGradle := make([]string, 0, 100)
 	for _, element := range gradle {
 		if strings.Contains(element, "versionName ") {
-			fmt.Printf("Ser %s to %s\n", strings.TrimSpace(element), strings.TrimSpace(newVersionName))
-			newGradle = append(newGradle, element[0:strings.Index(element, "\"")]+newVersionName)
+			fmt.Printf("Set %s to %s\n", strings.TrimSpace(element), strings.TrimSpace(newVersionName))
+
+			newGradle = append(newGradle, element[0:strings.Index(element, "\"")]+newVersionName+"\n")
 		} else if strings.Contains(element, "versionCode") {
 			fmt.Printf("Set %s to %s\n", strings.TrimSpace(element), strings.TrimSpace(newVersionCode))
-			rep := regexp.MustCompile(`\d`)
-			newGradle = append(newGradle, rep.ReplaceAllString(element, newVersionCode))
+
+			newGradle = append(newGradle, regexp.MustCompile(`\d`).ReplaceAllString(element, newVersionCode)+"\n")
 		} else {
-			newGradle = append(newGradle, element)
+			newGradle = append(newGradle, element+"\n")
 		}
 	}
 

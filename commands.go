@@ -19,7 +19,7 @@ var Commands = []cli.Command{
 	},
 	{
 		Name:   "minor",
-		Usage:  "[WIP]Bump up minor version e.g. 1.2.2 to 1.3.0",
+		Usage:  "Bump up minor versionName and versionCode e.g. 1.2.2 to 1.3.0 and 3 to 4",
 		Action: command.CmdMinor,
 		Flags:  []cli.Flag{},
 	},

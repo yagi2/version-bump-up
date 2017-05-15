@@ -1,8 +1,18 @@
 # Android Version Bump Tool[WIP]
 ## Description
-Management Android VERSION_NAME and VERSION_CODE of build.gradle.
+Management Android versionName and versionCode of build.gradle.
 
-## Usage
+## Usage  
+* major  
+    - WIP
+* minor  
+    - WIP
+* patch  
+    - WIP
+* set  
+    `$ version-bump-tool set [versionName] [versionCode]`  
+    e.g. `$ version-bump-tool set 1.0.1 2`
+* check
 
 ## Install
 

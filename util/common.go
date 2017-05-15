@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -50,5 +50,15 @@ func GetVersionName(element string) string {
 }
 
 func GetVersionCode(element string) string {
-	return regexp.MustCompile(`\d`).FindAllStringSubmatch(element, -1)[0][0]
+	return element[strings.LastIndex(element, " ")+1 : len(element)]
+}
+
+func GetNextVersionCode(element string) string {
+	nowVersionCode := GetVersionCode(element)
+
+	var nextVersionCode int
+	nextVersionCode, _ = strconv.Atoi(nowVersionCode)
+	nextVersionCode++
+
+	return element[0:strings.LastIndex(element, " ")+1] + strconv.Itoa(nextVersionCode) + "\n"
 }

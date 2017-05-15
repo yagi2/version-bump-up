@@ -3,7 +3,6 @@ package command
 import (
 	"fmt"
 	"os"
-	"regexp"
 	"strconv"
 	"strings"
 
@@ -23,7 +22,7 @@ func CmdMinor(c *cli.Context) {
 	for _, element := range gradle {
 		if strings.Contains(element, "versionName ") {
 			nowVersionName := util.GetVersionName(element)
-			nowMinor := nowVersionName[strings.Index(nowVersionName, ".")+1 : strings.Index(nowVersionName, ".")+2]
+			nowMinor := nowVersionName[strings.Index(nowVersionName, ".")+1 : strings.LastIndex(nowVersionName, ".")]
 
 			var nextMinor int
 			nextMinor, _ = strconv.Atoi(nowMinor)
@@ -35,15 +34,13 @@ func CmdMinor(c *cli.Context) {
 
 			newGradle = append(newGradle, element[0:strings.Index(element, "\"")]+"\""+nextVersionName+"\"\n")
 		} else if strings.Contains(element, "versionCode ") {
-			nowVersionCode := util.GetVersionCode(element)
-
 			var nextVersionCode int
-			nextVersionCode, _ = strconv.Atoi(nowVersionCode)
+			nextVersionCode, _ = strconv.Atoi(util.GetVersionCode(element))
 			nextVersionCode++
 
-			fmt.Printf("Bump up Patch %s to %s\n", nowVersionCode, strconv.Itoa(nextVersionCode))
+			fmt.Printf("Bump up Patch %s to %s\n", util.GetVersionCode(element), strconv.Itoa(nextVersionCode))
 
-			newGradle = append(newGradle, regexp.MustCompile(`\d`).ReplaceAllString(element, strconv.Itoa(nextVersionCode))+"\n")
+			newGradle = append(newGradle, util.GetNextVersionCode(element))
 		} else {
 			newGradle = append(newGradle, element+"\n")
 		}

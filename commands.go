@@ -13,7 +13,7 @@ var GlobalFlags = []cli.Flag{}
 var Commands = []cli.Command{
 	{
 		Name:   "major",
-		Usage:  "[WIP]Bump up major version e.g. 1.2.2 to 2.0.0",
+		Usage:  "Bump up major versionName and versionCode e.g. 1.2.2 to 2.0.0 and 3 to 4",
 		Action: command.CmdMajor,
 		Flags:  []cli.Flag{},
 	},

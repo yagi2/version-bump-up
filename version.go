@@ -1,4 +1,4 @@
 package main
 
 const Name string = "Android Version Bump up Tool from CLI"
-const Version string = "0.9.9"
+const Version string = "0.9.10"

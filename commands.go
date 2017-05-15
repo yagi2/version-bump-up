@@ -25,7 +25,7 @@ var Commands = []cli.Command{
 	},
 	{
 		Name:   "patch",
-		Usage:  "[WIP]Bump up patch version e.g. 1.2.2 to 1.2.3",
+		Usage:  "Bump up patch versionName and versionCode e.g. 1.2.2 to 1.2.3 and 3 to 4",
 		Action: command.CmdPatch,
 		Flags:  []cli.Flag{},
 	},

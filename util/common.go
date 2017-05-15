@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
+	"strings"
 )
 
 func OpenBuildGradle() []string {
@@ -41,4 +43,12 @@ func WriteBuildGradle(newGradle []string) {
 	}
 
 	fmt.Println("Complete write to app/build.gradle")
+}
+
+func GetVersionName(element string) string {
+	return element[strings.Index(element, "\"")+1 : len(element)-1]
+}
+
+func GetVersionCode(element string) string {
+	return regexp.MustCompile(`\d`).FindAllStringSubmatch(element, -1)[0][0]
 }

@@ -1,18 +1,24 @@
 # Android Version Bump Tool[WIP]
 ## Description
-Management Android versionName and versionCode of build.gradle.
+Management Android versionName and versionCode of app/build.gradle.  
+It is not yet supported when it is replaced by a variable or managed by another file. (Issue #1)
+  
+## Feature
+- auto increment versionCode. e.g. versionCode 5 to versionCode 6
+- auto increment {major|minor|patch} versionName from each subcommand.
 
 ## Usage  
 * major  
-    - WIP
+    - `$ version-bump-up major`
 * minor  
-    - WIP
+    - `$ version-bump-up minor`
 * patch  
-    - WIP
+    - `$ version-bump-up patch`
 * set  
-    `$ version-bump-tool set [versionName] [versionCode]`  
-    e.g. `$ version-bump-tool set 1.0.1 2`
+    - `$ version-bump-up set [versionName] [versionCode]`  
+        - e.g. `$ version-bump-up set 1.0.1 2`
 * check
+    - `$ version-bump-up check`
 
 ## Install
 
@@ -35,3 +41,7 @@ $ go get -d github.com/yagi2/version-bump-up
 ## Author
 
 [yagi2](https://github.com/yagi2)
+
+## todo
+- add test code.
+- support replaced by a variable and managed by another file.

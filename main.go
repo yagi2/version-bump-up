@@ -13,7 +13,7 @@ func main() {
 	app.Version = Version
 	app.Author = "yagi2"
 	app.Email = "mail@yagi2.com"
-	app.Usage = ""
+	app.Usage = "Android Project Version Manager from CLI"
 	app.Flags = GlobalFlags
 	app.Commands = Commands
 	app.CommandNotFound = CommandNotFound

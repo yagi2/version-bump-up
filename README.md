@@ -1,4 +1,4 @@
-# Android Version Bump Tool[WIP]
+# Android Version Bump Tool
 ## Description
 Management Android versionName and versionCode of app/build.gradle.  
 It is not yet supported when it is replaced by a variable or managed by another file. (Issue #1)

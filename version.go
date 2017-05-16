@@ -1,4 +1,4 @@
 package main
 
 const Name string = "version-bump-up"
-const Version string = "0.9.10"
+const Version string = "1.0.0"
